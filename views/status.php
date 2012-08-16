@@ -1,1 +1,1 @@
-<div style="border-bottom:1px solid #d6156c"></div>
+<!-- status: <?php echo $this->status; ?> -->

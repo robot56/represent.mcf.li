@@ -45,7 +45,7 @@ specific to mysql, but for now I used mysql because I don't have much-o
 experience with anything else.
 
 ## BBCODE
-
+```
 <div style="display:none;" id="rep_box_signal"></div>
 <script type="text/javascript">
 jQuery(function(){
@@ -66,9 +66,11 @@ jQuery(function(){
     jQuery('#rep_box_signal').remove();
 });
 </script>
+```
 
 ## TO DO
 
 - Option to force a refresh of a users Minecraft name
 - Page displaying all reputation given to a post
 - Page displaying all the reputation a user has given
+- Switch to a queue system (using redis) for processing posts and users?

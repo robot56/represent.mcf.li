@@ -43,4 +43,8 @@
         }
     });
 
+    respond('/404', function ($request, $response) {
+        echo '404 :(';
+    });
+
     dispatch();

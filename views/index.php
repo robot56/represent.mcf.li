@@ -14,20 +14,16 @@
             <div class="span8">
                 <h1>represent</h1>
                 <p>
-                    Minecraft reputation visualised! I will make a proper
-                    explanation of this sometime.
+                    Minecraft Forum reputation visualised! The faces of the 
+                    people that have given reputation to a post.
                 </p>
                 <h3>How to use</h3>
                 <p>
-                    Edit your minecraftforum.net post to include the following
-                    BBCode at the base of the post:
-                </p>
-                <p>
-                    <code>[represent]</code>
-                </p>
-                <p>
-                    Then refresh the page and wait a few moments while the faces
-                    are generated.
+                    Edit your minecraftforum.net post to include the represent
+                    BBCode at the bottom (<code>[represent]</code>) and then 
+                    refresh the page and wait a few moments while the faces are 
+                    generated. <strong>Only</strong> include the BBCode in the
+                    opening post of a topic, do not use it for replies.
                 </p>
                 <h3>How does it work</h3>
                 <p>

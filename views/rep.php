@@ -37,7 +37,7 @@
         shuffle($users);
         foreach(array_slice($users, 0, 66) as $user) { 
     ?>
-        <li class="rep_mcf_li_reputation_faces_li"><img src="http://minotar.net/avatar/<?php echo $user["minecraft_name"]; ?>/32.png" title="<?php echo $user["display_name"]; ?>"/></li>
+        <li class="rep_mcf_li_reputation_faces_li"><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-" title="<?php echo $user["display_name"]; ?>"><img src="http://minotar.net/avatar/<?php echo $user["minecraft_name"]; ?>/32.png"/></a></li>
     <?php } ?>
         <div style="clear:both;"></div>
     </ul>
