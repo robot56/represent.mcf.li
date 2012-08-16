@@ -30,6 +30,5 @@
             if($value[$find_key] == $find_value)
                 $return_array[$key] = $value;
         }
-        
         return $return_array;
     }

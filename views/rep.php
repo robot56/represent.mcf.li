@@ -1,6 +1,8 @@
 <style type="text/css">
     #rep_mcf_li_reputation_faces{
-        
+        min-height:32px;
+        max-height:100px;
+        margin-bottom:8px;
     }
     
     #rep_mcf_li_info{
@@ -27,8 +29,7 @@
 </style>
 <div id="rep_mcf_li_reputation_faces">
     <div id="rep_mcf_li_info">
-        <!-- <h3><?php echo count($this->users); ?> people like this!</h3> and here's
-        a few of their faces ;-) -->
+        <a href="#">view all rep</a> <a href="#">add your face</a>
     </div>
     <ul id="rep_mcf_li_reputation_faces_ul">
     <?php 

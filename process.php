@@ -1,9 +1,7 @@
 <?php
 
-    /*
     if(php_sapi_name() != 'cli')
-    die('No permission to access');
-    */
+        die('No permission to access');
 
     require 'class/minecraftforum.php';
     require 'class/minotar.php';
@@ -12,8 +10,11 @@
     
     error_reporting(0);
 
-    $post_id = $_GET['post_id']; // TO DO: validate post_id
-
+    $post_id = $argv[1] ?: $_GET['post_id'];
+    
+    if(!is_numeric($post_id))
+        die('invalid post_id');
+    
     $database = new database();
 
     $post = $database->get_post($post_id);

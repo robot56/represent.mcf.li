@@ -43,3 +43,32 @@ Built with [klein.php](https://raw.github.com/chriso/klein.php), using
 it'd be better to use nosql for this because it doesn't really /need/ anything
 specific to mysql, but for now I used mysql because I don't have much-o 
 experience with anything else.
+
+## BBCODE
+
+<div style="display:none;" id="rep_box_signal"></div>
+<script type="text/javascript">
+jQuery(function(){
+    var rep_box = jQuery('#rep_box_signal').parents('.post_block:first');
+    var rep_box_id = rep_box.attr("id");
+    var post_id = rep_box_id.split("post_id_")[1];
+    var faces_url = "http://represent-mcf-li.dev/post/"+post_id;
+    jQuery.ajax({
+        url: faces_url,
+        timeout: 1400,
+        success: function(data){ 
+            jQuery(rep_box).after(data); 
+        },
+        error: function(data){ 
+            console.log(data); 
+        }
+    });
+    jQuery('#rep_box_signal').remove();
+});
+</script>
+
+## TO DO
+
+- Option to force a refresh of a users Minecraft name
+- Page displaying all reputation given to a post
+- Page displaying all the reputation a user has given
