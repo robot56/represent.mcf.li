@@ -5,7 +5,7 @@
     }
     
     #rep_mcf_li_info{
-        background-image:url('/assets/img/love.png');
+        background-image:url('<?php echo APP_URL; ?>assets/img/love.png');
         float:left;
         height:100px;
         padding:10px;
@@ -20,7 +20,7 @@
     }
     
     #rep_mcf_li_reputation_faces .rep_mcf_li_reputation_faces_li{
-        background-image:url('/assets/img/steve_32.png');
+        background-image:url('<?php echo APP_URL; ?>assets/img/steve_32.png');
         display:block;
         float:left;
         height:32px;

@@ -14,14 +14,15 @@
     respond('/username', function ($request, $response) {
         if($_POST['url'])
         {
-            preg_match('%http://www.minecraftforum.net/user/([0-9]+)-(?:.*?)$%', $_POST['url'], $user_id);
+            preg_match('%http://www.minecraftforum.net/user/([0-9]{1,9})-(?:.*?)$%', $_POST['url'], $user_id);
             
             if(is_numeric($user_id[1])) {
                 $database = new database();
                 
                 if(!$database->get_user($user_id[1])) {
                     $status = array("message" => "That account doesn't exist in the user database, have you repped before?", "type" => "error"); // maybe I should insert instead...?
-                    continue;
+                    $response->render("views/username.php", array("status" => $status));
+                    return;
                 }
                 
                 // don't want to do this in runtime but SOMEONE DECIDED TO MAKE MCF PROFILES HIDDEN TO GUESTS >>>>:(
