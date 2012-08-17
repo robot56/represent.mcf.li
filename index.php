@@ -32,7 +32,7 @@
 
                 if($profile_page["info"]["http_code"] == 200) {
                     $html = preparse($profile_page["page"]);
-                    preg_match('%<li class=\'clear clearfix\'><span class=\'row_title\'>Minecraft</span><div class=\'row_data\'>([a-z0-9_]{2,16})</div>%', $html, $minecraft_name);
+                    preg_match('%<li class=\'clear clearfix\'><span class=\'row_title\'>Minecraft</span><div class=\'row_data\'>([a-zA-Z0-9_]{2,16})</div>%', $html, $minecraft_name);
                     if($minecraft_name[1]) {
                         $custom_head = 0;
                         
@@ -59,7 +59,7 @@
     });
     
     respond('/reputation/[i:id]', function ($request, $response) {
-        echo 'full list of reputation for a post';
+        echo 'full list of reputation for a post will be here someday heh';
     });
     
     respond('/post/[i:id]', function ($request, $response) {
@@ -70,7 +70,7 @@
         
         $post = $database->get_post($post_id);
         
-        if(!$post OR strtotime($post["last_update"]) < time() - 86400) {
+        if(!$post OR strtotime($post["last_update"]) < time() - 7200) {
             exec("php ".APP_PATH."process.php $post_id  >> /dev/null &");
         }
             
@@ -81,12 +81,12 @@
         } else if (empty($users)) {
             $response->render("views/status.php", array("status" => "no users yet"));
         } else {
-            $response->render("views/rep.php", array("users" => $users));
+            $response->render("views/rep.php", array("users" => $users, "post_id" => $post_id));
         }
     });
 
     respond('/404', function ($request, $response) {
-        echo '404 :(';
+        echo '404 :( <a href="'.APP_PATH.'">&larr; go home</a>';
     });
 
     dispatch();

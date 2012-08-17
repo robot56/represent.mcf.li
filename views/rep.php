@@ -28,6 +28,7 @@
         width:32px;
     }
 </style>
+<div id="gotorep"></div>
 <div id="rep_mcf_li_reputation_faces">
     <div id="rep_mcf_li_info">
         

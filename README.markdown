@@ -50,19 +50,22 @@ experience with anything else.
 <script type="text/javascript">
 jQuery(function(){
     var rep_box = jQuery('#rep_box_signal').parents('.post_block:first');
-    var rep_box_id = rep_box.attr("id");
-    var post_id = rep_box_id.split("post_id_")[1];
-    var faces_url = "http://represent-mcf-li.dev/post/"+post_id;
-    jQuery.ajax({
-        url: faces_url,
-        timeout: 1400,
-        success: function(data){ 
-            jQuery(rep_box).after(data); 
-        },
-        error: function(data){ 
-            console.log(data); 
-        }
-    });
+
+    if(jQuery.trim(jQuery(rep_box).find('.post_id').children('a').html()) == "#1") {
+        var rep_box_id = rep_box.attr("id");
+        var post_id = rep_box_id.split("post_id_")[1];
+        var faces_url = "http://represent-mcf-li.dev/post/"+post_id;
+        jQuery.ajax({
+            url: faces_url,
+            timeout: 1400,
+            success: function(data){ 
+                jQuery(rep_box).after(data); 
+            },
+            error: function(data){ 
+                console.log(data); 
+            }
+        });
+    }
     jQuery('#rep_box_signal').remove();
 });
 </script>
@@ -70,7 +73,7 @@ jQuery(function(){
 
 ## TO DO
 
-- Option to force a refresh of a users Minecraft name
 - Page displaying all reputation given to a post
 - Page displaying all the reputation a user has given
 - Switch to a queue system (using redis) for processing posts and users?
+- A list of "top +repped topics"
