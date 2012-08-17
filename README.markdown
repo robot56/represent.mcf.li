@@ -73,7 +73,6 @@ jQuery(function(){
 
 ## TO DO
 
-- Page displaying all reputation given to a post
 - Page displaying all the reputation a user has given
 - Switch to a queue system (using redis) for processing posts and users?
 - A list of "top +repped topics"

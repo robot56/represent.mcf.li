@@ -59,7 +59,20 @@
     });
     
     respond('/reputation/[i:id]', function ($request, $response) {
-        echo 'full list of reputation for a post will be here someday heh';
+        $post_id = $request->param('id');
+        $database = new database();
+        
+        $post = $database->get_post($post_id);
+        
+        if(!$post)
+        {
+            $response->render("views/404.php", array("message" => "Page not found"));
+            return;
+        }
+        
+        $users = $database->get_post_rep_users($post_id);
+        
+        $response->render("views/reputation.php", array("users" => $users, "post_id" => $post_id));
     });
     
     respond('/post/[i:id]', function ($request, $response) {
@@ -86,7 +99,7 @@
     });
 
     respond('/404', function ($request, $response) {
-        echo '404 :( <a href="'.APP_PATH.'">&larr; go home</a>';
+        $response->render("views/404.php", array("message" => "Page not found"));
     });
 
     dispatch();

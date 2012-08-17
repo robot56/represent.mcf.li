@@ -20,10 +20,16 @@ h1{
 }
 
 .faces li{
+    background-image:url('../../assets/img/steve_64.png');
     display:block;
     float:left;
     height:64px;
     margin:0 4px 4px 0;
+    width:64px;
+}
+
+.faces li a img{
+    height:64px;
     width:64px;
 }
 
