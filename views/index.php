@@ -41,11 +41,24 @@
                     <a href="http://github.com/citricsquid/represent.mcf.li">github.com/citricsquid</a>,
                     any improvements are welcome.
                 </p>
+                <h3>FAQ</h3>
+                <p>
+                    <strong>Q: My face doesn't show up?</strong><br/>
+                    A: The reputation faces update every 24 hours, if you have
+                    +repped a post you must wait up to 24 hours for your face
+                    to show. If you use the default skin your face will not be 
+                    displayed in the topic.
+                </p>
+                <p>
+                    <strong>Q: How do you determine my Minecraft name?</strong><br/>
+                    A: By default your Minecraftforum.net username is used, to 
+                    update your Minecraft name <a href="#">go here</a>.
+                </p>
                 <h3>People</h3>
                 <div class="faces">
                     <ul>
                         <li><img src="http://minotar.net/avatar/citricsquid/64" title="citricsquid: idea/developer"/></li>
-                        <li><img src="http://minotar.net/avatar/PuyoDead/64" title="PuyoDead: art"/></li>
+                        <li><img src="http://minotar.net/avatar/PuyoDead/64" title="PuyoDead: art (soon)"/></li>
                         <li><img src="http://minotar.net/avatar/clone1018/64" title="Special mention: clone1018 for Minotar"/></li>
                     </ul>
                     <div class="clear"></div>

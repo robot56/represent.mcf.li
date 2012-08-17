@@ -12,8 +12,49 @@
     });
     
     respond('/username', function ($request, $response) {
-        echo 'option to force update of a username and skin';
-        echo 'pull minecraft name from mcf profile :D';
+        if($_POST['url'])
+        {
+            preg_match('%http://www.minecraftforum.net/user/([0-9]+)-(?:.*?)$%', $_POST['url'], $user_id);
+            
+            if(is_numeric($user_id[1])) {
+                $database = new database();
+                
+                if(!$database->get_user($user_id[1])) {
+                    $status = array("message" => "That account doesn't exist in the user database, have you repped before?", "type" => "error"); // maybe I should insert instead...?
+                    continue;
+                }
+                
+                // don't want to do this in runtime but SOMEONE DECIDED TO MAKE MCF PROFILES HIDDEN TO GUESTS >>>>:(
+                $minecraftforum = new Minecraftforum();
+                $minecraftforum->authenticate();
+                $profile_page = $minecraftforum->page_contents("http://www.minecraftforum.net/user/".$user_id[1]."-");
+
+                if($profile_page["info"]["http_code"] == 200) {
+                    $html = preparse($profile_page["page"]);
+                    preg_match('%<li class=\'clear clearfix\'><span class=\'row_title\'>Minecraft</span><div class=\'row_data\'>([a-z0-9_]{2,16})</div>%', $html, $minecraft_name);
+                    if($minecraft_name[1]) {
+                        $custom_head = 0;
+                        
+                        if(Minotar::is_head_custom($minecraft_name[1]))
+                            $custom_head = 1;
+                        
+                        $database->update_user_minecraft_name($user_id[1], $minecraft_name[1], $custom_head);
+                        $status = array("message" => "Minecraft name updated to ".$minecraft_name[1], "type" => "success");
+                    } else {
+                        $status = array("message" => "A valid Minecraft name cannot be found on the profile, is it valid?", "type" => "error");
+                    }
+                } else {
+                    $status = array("message" => "Profile could not be loaded", "type" => "error");
+                }
+            } else {
+                $status = array("message" => "invalid profile link", "type" => "error");
+            }
+
+            $response->render("views/username.php", array("status" => $status));
+        } else { 
+            $response->render("views/username.php");
+        }
+        
     });
     
     respond('/reputation/[i:id]', function ($request, $response) {

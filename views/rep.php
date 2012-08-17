@@ -1,12 +1,13 @@
 <style type="text/css">
     #rep_mcf_li_reputation_faces{
-        min-height:32px;
-        max-height:100px;
+        height:100px;
         margin-bottom:8px;
     }
     
     #rep_mcf_li_info{
+        background-image:url('/assets/img/love.png');
         float:left;
+        height:100px;
         padding:10px;
         width:160px;
     }
@@ -29,7 +30,7 @@
 </style>
 <div id="rep_mcf_li_reputation_faces">
     <div id="rep_mcf_li_info">
-        <a href="#">view all rep</a> <a href="#">add your face</a>
+        
     </div>
     <ul id="rep_mcf_li_reputation_faces_ul">
     <?php 
@@ -37,7 +38,7 @@
         shuffle($users);
         foreach(array_slice($users, 0, 66) as $user) { 
     ?>
-        <li class="rep_mcf_li_reputation_faces_li"><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-" title="<?php echo $user["display_name"]; ?>"><img src="http://minotar.net/avatar/<?php echo $user["minecraft_name"]; ?>/32.png"/></a></li>
+        <li class="rep_mcf_li_reputation_faces_li"><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-" title="<?php echo $user["display_name"]; ?>"><img src="http://minotar.net/helm/<?php echo $user["minecraft_name"]; ?>/32.png"/></a></li>
     <?php } ?>
         <div style="clear:both;"></div>
     </ul>

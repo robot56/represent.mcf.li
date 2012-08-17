@@ -32,3 +32,9 @@
         }
         return $return_array;
     }
+    
+    // preparse
+    // get it, it's a pun, PREPARE a string for regex PARSING
+    function preparse($string) {
+        return str_replace(array("\n", "\r", "\t", "\0", "\x0B"), "", $string);
+    }

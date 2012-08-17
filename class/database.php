@@ -52,5 +52,18 @@ class database {
             $query->execute(array($user["user_id"], $user["display_name"], $user["minecraft_name"], $user["custom_head"]));
         }
     }
+    
+    function get_user ($user_id) { 
+        $query = $this->pdo->prepare("SELECT * FROM users WHERE user_id = :user_id");
+        $query->execute(array(":user_id" => $user_id));
+        $user = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $user;
+    }
+    
+    function update_user_minecraft_name ($user_id, $minecraft_name, $custom_head) {
+        $query = $this->pdo->prepare("UPDATE users SET minecraft_name = ?, custom_head = ? WHERE user_id = ?");
+        $query->execute(array($minecraft_name, $custom_head, $user_id));
+    }
 
 }
