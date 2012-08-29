@@ -44,7 +44,7 @@
                     A: Theoretically any, however we would prefer if you only
                     use it for "content" topics. For example, a topic for a mod,
                     texture pack, map, skin, language pack, server, video, list 
-                    of cool eeds or directory of clans is "content", whereas a
+                    of cool seeds or directory of clans is "content", whereas a
                     topic asking for support or discussing the latest update is 
                     not. If you're not sure if your topic is allowed then ask in
                     the 
