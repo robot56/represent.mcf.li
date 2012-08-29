@@ -35,7 +35,7 @@
                 <p>
                     The site is built using <a href="https://github.com/chriso/klein.php">klein.php</a>, 
                     you can find the source code on
-                    <a href="http://github.com/citricsquid/represent.mcf.li">github.com/citricsquid</a>,
+                    <a href="http://github.com/minecraftforum/represent.mcf.li">github.com/minecraftforum</a>,
                     any improvements are welcome.
                 </p>
                 <h3>FAQ</h3>
