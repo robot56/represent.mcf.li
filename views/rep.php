@@ -66,7 +66,7 @@
         foreach(array_slice($users, 0, 65) as $user) {
             $displayed_users++;
     ?>
-        <li class="rep_mcf_li_reputation_faces_li"><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-" title="<?php echo $user["display_name"]; ?>"><img src="http://minotar.net/helm/<?php echo $user["minecraft_name"]; ?>/32.png"/></a></li>
+        <li class="rep_mcf_li_reputation_faces_li"><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-" title="<?php echo $user["display_name"]; ?>"><img src="https://minotar.net/helm/<?php echo $user["minecraft_name"]; ?>/32.png"/></a></li>
     <?php } ?>
     <?php if($displayed_users == 65) {?>
         <a id="rep_mcf_li_all_reputation" href="<?php echo APP_URL; ?>reputation/<?php echo $this->post_id; ?>" title="view all <?php echo count($users); ?> +reps">
