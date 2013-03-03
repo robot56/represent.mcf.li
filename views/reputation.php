@@ -14,7 +14,7 @@
                 <div class="faces">
                     <ul>
                         <?php foreach($this->users as $user) { ?>
-                        <li><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-/"><img src="http://minotar.net/helm/<?php echo $user["custom_head"] == 1 ? $user["minecraft_name"] : "samuel"; ?>/64" title="<?php echo $user["minecraft_name"]; ?>"/></a></li>
+                        <li><a href="http://www.minecraftforum.net/user/<?php echo $user["user_id"]; ?>-/"><img src="https://minotar.net/helm/<?php echo $user["custom_head"] == 1 ? $user["minecraft_name"] : "samuel"; ?>/64.png" title="<?php echo $user["minecraft_name"]; ?>"/></a></li>
                         <?php } ?>
                     </ul>
                     <div class="clear"></div>
